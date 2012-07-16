@@ -1,4 +1,5 @@
 async = require 'async'
+_ = require 'underscore'
 
 exports.middleware = (page) -> (params) ->
   augmented = 
