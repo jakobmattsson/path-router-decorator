@@ -18,7 +18,7 @@ exports.middleware = (page) -> (params) ->
 exports.source = (page, resolver) -> (params) ->
   augmented = 
     callback: (args, done) ->
-      sources = params.sources ? {}
+      sources = _(params.sources ? {}).clone()
       Object.keys(sources).forEach (key) ->
         replaced = sources[key].split('/').map (unit) ->
           args[unit.slice(1)] ? unit
